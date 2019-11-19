@@ -27,7 +27,7 @@ class BitcoinEurosViewController			: UIViewController {
 				self?.showSimpleAlertController(message: error.localizedDescription)
 				return
 			}
-			
+
 			DispatchQueue.main.async {
 				self?.tableView.reloadData()
 			}

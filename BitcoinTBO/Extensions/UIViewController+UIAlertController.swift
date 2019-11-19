@@ -12,7 +12,7 @@ extension UIViewController {
 	
 	func showSimpleAlertController(title: String? = nil, message: String) {
 		let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-		let action = UIAlertAction(title: "Accept", style: .default) { (action: UIAlertAction) in
+		let action = UIAlertAction(title: NSLocalizedString("Accept", comment: ""), style: .default) { (action: UIAlertAction) in
 			alertController.dismiss(animated: true, completion: nil)
 		}
 		

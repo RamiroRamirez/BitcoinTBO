@@ -18,6 +18,8 @@ class BitcoinInformationCell					: UITableViewCell {
 	@IBOutlet private weak var closeValueLabel	: UILabel!
 }
 
+// MARK: - Setup Methods
+
 extension BitcoinInformationCell {
 	
 	func setupCell(bitcoinDayInformation: BitcoinDayInformation, dateFormatter: DateFormatter) {

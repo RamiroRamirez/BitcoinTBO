@@ -31,6 +31,15 @@ struct APIManager {
     }
 }
 
+// MARK: - Get request
+
+extension APIManager {
+    
+    static func get(requestElements: RequestElements, success: ((_ response: Any?) -> Void)?, failure: ((_ error: Error) -> Void)?) {
+        self.prepareAndSendRequest(requestElements: requestElements, httpMethod: .get, success: success, failure: failure)
+    }
+}
+
 // MARK: - Create request
 
 extension APIManager {
@@ -54,17 +63,14 @@ extension APIManager {
         let session = URLSession(configuration: sessionConfiguration)
         
         guard let url = self.urlComponents(url: requestElements.url, parameters: requestElements.parameters)?.url else {
-            // Send error back
-            // ramram
+			failure?(APIManager.Invalid.format.localizedError)
             return
         }
         
         let request = self.request(url: url, httpMethod: httpMethod, headers: requestElements.headers)
         let task = session.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
             if let error = error {
-                // Send error back
-                // ramram
-                print(error)
+                failure?(error)
                 return
             }
 
@@ -93,9 +99,28 @@ extension APIManager {
     }
 }
 
+// MARK: - Error cases
+
 extension APIManager {
-    
-    static func get(requestElements: RequestElements, success: ((_ response: Any?) -> Void)?, failure: ((_ error: Error) -> Void)?) {
-        self.prepareAndSendRequest(requestElements: requestElements, httpMethod: .get, success: success, failure: failure)
-    }
+	
+	enum Invalid {
+		case format
+		
+		var localizedError		: Error {
+			let domain = (Bundle.main.bundleIdentifier ?? "BitcoinTBO")
+			return NSError(domain: domain, code: self.code, userInfo: [NSLocalizedDescriptionKey: self.message])
+		}
+		
+		private var code		: Int {
+			switch self {
+			case .format		: return 3000
+			}
+		}
+		
+		private var message		: String {
+			switch self {
+			case .format		: return NSLocalizedString("Wrong.format", comment: "")
+			}
+		}
+	}
 }
