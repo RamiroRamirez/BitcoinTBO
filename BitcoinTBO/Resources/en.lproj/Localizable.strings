@@ -9,4 +9,6 @@
 // MARK: - General
 
 "Accept" = "Ok";
-"Wrong format" = "Something went wrong, the format of the request or response is not valid";
+"Wrong.format" = "Something went wrong, the format of the request or response is not valid";
+"Current.Bitcoin.Value" = "Current bitcoin value:";
+

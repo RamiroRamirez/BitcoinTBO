@@ -12,15 +12,18 @@ struct Constants {
     
     struct API {
 		
-		static let baseUrl = URL(string: "https://min-api.cryptocompare.com/data/v2")
+		static let baseUrl		= URL(string: "https://min-api.cryptocompare.com/data")
+		static let baseUrlV2	= URL(string: "https://min-api.cryptocompare.com/data/v2")
 		
 		enum Endpoint: String {
-			case historicalDaily = "histoday"
+			case historicalDaily	= "histoday"
+			case price				= "price"
 		}
 		
 		enum Keys: String {
 			case fsym 		= "fsym"
 			case tsym 		= "tsym"
+			case tsyms 		= "tsyms"
 		}
 		
 		enum Values: String {

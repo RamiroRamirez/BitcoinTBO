@@ -32,15 +32,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7co-DK-aEE">
-                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="158" width="414" height="738"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="embed" id="CdB-SQ-AKb"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uPp-do-ja0">
-                                <rect key="frame" x="0.0" y="88" width="414" height="0.0"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="70"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" id="uDn-tH-B2p"/>
+                                    <constraint firstAttribute="height" constant="70" id="uDn-tH-B2p"/>
                                 </constraints>
                                 <connections>
                                     <segue destination="P3P-6g-KCN" kind="embed" id="sTk-DF-WwS"/>
@@ -70,11 +70,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="BitcoinEurosViewController" customModule="BitcoinTBO" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="738"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ezW-9P-iKH" customClass="BitcoinEuroTableView">
-                                <rect key="frame" x="0.0" y="44" width="414" height="764"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="694"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
                         </subviews>
@@ -96,17 +96,17 @@
             </objects>
             <point key="canvasLocation" x="797" y="120"/>
         </scene>
-        <!--View Controller-->
+        <!--Current Bitcoin Infos View Controller-->
         <scene sceneID="j5i-Dc-BTb">
             <objects>
-                <viewController id="P3P-6g-KCN" sceneMemberID="viewController">
+                <viewController id="P3P-6g-KCN" customClass="CurrentBitcoinInfosViewController" customModule="BitcoinTBO" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PZ1-gp-bnp">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="0.0"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s8f-ux-bF1">
-                                <rect key="frame" x="203" y="-10.5" width="8" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="203" y="24.5" width="8" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -117,6 +117,9 @@
                             <constraint firstItem="s8f-ux-bF1" firstAttribute="centerX" secondItem="PZ1-gp-bnp" secondAttribute="centerX" id="IZ4-IU-dqS"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="currentBitcoinValueLabel" destination="s8f-ux-bF1" id="KHo-c6-nMc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pg3-XN-MCN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

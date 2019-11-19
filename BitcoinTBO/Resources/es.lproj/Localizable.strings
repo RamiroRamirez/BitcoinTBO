@@ -10,3 +10,4 @@
 
 "Accept" = "Aceptar";
 "Wrong.format" = "Algo extraño ocurrió, el formato de la solicitud o de la respuesta es incorrecta";
+"Current.Bitcoin.Value" = "Actual valor del bitcoin:";

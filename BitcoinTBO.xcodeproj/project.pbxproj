@@ -29,6 +29,9 @@
 		B6408D91238492080029A720 /* BitcoinInformationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6408D90238492080029A720 /* BitcoinInformationCell.xib */; };
 		B6408D94238493BC0029A720 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B6408D96238493BC0029A720 /* Localizable.strings */; };
 		B6408D9A23849AA30029A720 /* URL+AddPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6408D9923849AA30029A720 /* URL+AddPath.swift */; };
+		B6408D9C2384A7080029A720 /* BitcoinEurosContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6408D9B2384A7080029A720 /* BitcoinEurosContainerViewController.swift */; };
+		B6408D9E2384A7EA0029A720 /* CurrentBitcoinInfosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6408D9D2384A7EA0029A720 /* CurrentBitcoinInfosViewController.swift */; };
+		B6408DA02384A8830029A720 /* Bitcoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6408D9F2384A8830029A720 /* Bitcoin.swift */; };
 		B6D1BB3A23831EA40050696E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1BB3923831EA40050696E /* AppDelegate.swift */; };
 		B6D1BB5123831EA50050696E /* BitcoinTBOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1BB5023831EA50050696E /* BitcoinTBOTests.swift */; };
 		B6D1BB5E2383246E0050696E /* BitcoinEurosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1BB5D2383246E0050696E /* BitcoinEurosViewController.swift */; };
@@ -69,6 +72,9 @@
 		B6408D97238493BF0029A720 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B6408D98238494090029A720 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B6408D9923849AA30029A720 /* URL+AddPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+AddPath.swift"; sourceTree = "<group>"; };
+		B6408D9B2384A7080029A720 /* BitcoinEurosContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinEurosContainerViewController.swift; sourceTree = "<group>"; };
+		B6408D9D2384A7EA0029A720 /* CurrentBitcoinInfosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentBitcoinInfosViewController.swift; sourceTree = "<group>"; };
+		B6408D9F2384A8830029A720 /* Bitcoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bitcoin.swift; sourceTree = "<group>"; };
 		B6D1BB3623831EA40050696E /* BitcoinTBO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitcoinTBO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6D1BB3923831EA40050696E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6D1BB4723831EA50050696E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -223,6 +229,8 @@
 			isa = PBXGroup;
 			children = (
 				B6D1BB5D2383246E0050696E /* BitcoinEurosViewController.swift */,
+				B6408D9B2384A7080029A720 /* BitcoinEurosContainerViewController.swift */,
+				B6408D9D2384A7EA0029A720 /* CurrentBitcoinInfosViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -244,6 +252,7 @@
 				B6408D6C23846CB50029A720 /* BitcoinSubdata.swift */,
 				B6EA429023846202002C33F7 /* BitcoinDayInformation.swift */,
 				B6D1BB65238328EF0050696E /* BitcoinTBO-Bridging-Header.h */,
+				B6408D9F2384A8830029A720 /* Bitcoin.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -380,11 +389,14 @@
 				B6408D6D23846CB50029A720 /* BitcoinSubdata.swift in Sources */,
 				B6408D7A2384772A0029A720 /* BitcoinInformationCell.swift in Sources */,
 				B6D1BB5E2383246E0050696E /* BitcoinEurosViewController.swift in Sources */,
+				B6408D9C2384A7080029A720 /* BitcoinEurosContainerViewController.swift in Sources */,
+				B6408D9E2384A7EA0029A720 /* CurrentBitcoinInfosViewController.swift in Sources */,
 				B6D1BB6D238329B40050696E /* BitcoinEuroTableView.m in Sources */,
 				B6EA428E238452B1002C33F7 /* Constants.swift in Sources */,
 				B6408D852384855A0029A720 /* Double+EuroFormatter.swift in Sources */,
 				B6408D6A23846C810029A720 /* BitcoinData.swift in Sources */,
 				B6408D74238475E10029A720 /* UIViewController+UIAlertController.swift in Sources */,
+				B6408DA02384A8830029A720 /* Bitcoin.swift in Sources */,
 				B6D1BB3A23831EA40050696E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
