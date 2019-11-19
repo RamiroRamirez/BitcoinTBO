@@ -67,10 +67,7 @@ extension APIManager {
                 print(error)
                 return
             }
-            
-            // We know the answer is a json.
-            // Usually we should ask for "mime type" response property and react accordingly
-            // But we can skip that part and direct parse the data in json
+
             success?(data)
         }
 

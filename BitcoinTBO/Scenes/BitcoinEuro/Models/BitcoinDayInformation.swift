@@ -8,6 +8,11 @@
 
 import Foundation
 
-struct Bitcoin: Codable {
+struct BitcoinDayInformation: Codable {
 
+    var time    : Double
+    var high    : Double
+    var low     : Double
+    var open    : Double
+    var close   : Double
 }
