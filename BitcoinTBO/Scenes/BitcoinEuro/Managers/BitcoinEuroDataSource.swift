@@ -16,8 +16,12 @@ class BitcoinEuroDataSource         : NSObject {
 	var dateFormatter				= DateFormatter()
 }
 
+// MARK: - Fetchers
+
 extension BitcoinEuroDataSource {
-    
+	
+	/// Method to fetch Bitcoin information
+	/// - Parameter completion: completion containing error when needed
     func fetchBitcoinInformations(completion: ((_ error: Error?) -> Void)?) {
         BitcoinInformationManager.fetchBitcoinInformation { (bitcoinDayInformations: [BitcoinDayInformation], error: Error?) in
             if let error = error {
@@ -30,7 +34,8 @@ extension BitcoinEuroDataSource {
     }
 }
 
-@objc
+// MARK: - Implementation UITableViewDataSource Protocol
+
 extension BitcoinEuroDataSource: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -40,7 +45,7 @@ extension BitcoinEuroDataSource: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		guard
 			let bitcoinInformation = self.bitcoinDayInformations[safe: indexPath.row],
-			let cell = tableView.dequeueReusableCell(withIdentifier: "BitcoinInformationCell") as? BitcoinInformationCell else {
+			let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Cells.reuseIdentifier.bitcoinInformationCell.rawValue) as? BitcoinInformationCell else {
 				return UITableViewCell()
 		}
 
