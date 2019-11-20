@@ -20,12 +20,12 @@ class CurrentBitcoinInfosViewController: UIViewController {
 
 	// MARK: - View Life Cycle
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		
 		self.fetchCurrentBitcoinInformation()
 		self.setTimerForRequest()
-    }
+	}
 	
 	deinit {
 		self.fetchCurrentBitcoinInformationTimer?.invalidate()
