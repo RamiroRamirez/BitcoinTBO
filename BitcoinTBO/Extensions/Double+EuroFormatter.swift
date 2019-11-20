@@ -10,10 +10,10 @@ import Foundation
 
 extension Double {
 
-	func formatAsEuroCurrency() -> String? {
+	func currencyFormat(for currencyCode: String) -> String? {
 		let currencyFormatter = NumberFormatter()
 		currencyFormatter.numberStyle = .currency
-		currencyFormatter.currencyCode = "EUR"
+		currencyFormatter.currencyCode = currencyCode
 		currencyFormatter.maximumFractionDigits = 2
 		return currencyFormatter.string(from: NSNumber(value: self))
 	}

@@ -61,8 +61,7 @@ extension CurrentBitcoinInfosViewController {
 		
 		guard
 			let bitcoinValueInEuros = bitcoin?.valueInEuros,
-			let bitcoinValueInEurosString = bitcoinValueInEuros.formatAsEuroCurrency() else {
-				
+			let bitcoinValueInEurosString = bitcoinValueInEuros.currencyFormat(for: "EUR") else {
 				self.showSimpleAlertController(message: APIManager.Invalid.format.localizedError.localizedDescription)
 				return
 		}

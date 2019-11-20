@@ -38,11 +38,13 @@ extension Constants {
 	struct Cells {
 		
 		enum nibName: String {
-			case bitcoinInformationCell = "BitcoinInformationCell"
+			case bitcoinInformationCell 		= "BitcoinInformationCell"
+			case currencySelectionTableViewCell	= "CurrencySelectionTableViewCell"
 		}
 		
 		enum reuseIdentifier: String {
-			case bitcoinInformationCell = "BitcoinInformationCell"
+			case bitcoinInformationCell 		= "BitcoinInformationCell"
+			case currencySelectionTableViewCell	= "CurrencySelectionTableViewCell"
 		}
 	}
 

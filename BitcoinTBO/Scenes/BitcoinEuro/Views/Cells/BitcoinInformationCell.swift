@@ -16,6 +16,13 @@ class BitcoinInformationCell					: UITableViewCell {
 	@IBOutlet private weak var lowValueLabel	: UILabel!
 	@IBOutlet private weak var highValueLabel	: UILabel!
 	@IBOutlet private weak var closeValueLabel	: UILabel!
+
+	override func prepareForReuse() {
+		self.dateLabel.text = nil
+		self.lowValueLabel.text = nil
+		self.highValueLabel.text = nil
+		self.closeValueLabel.text = nil
+	}
 }
 
 // MARK: - Setup Methods
@@ -23,9 +30,9 @@ class BitcoinInformationCell					: UITableViewCell {
 extension BitcoinInformationCell {
 	
 	func setupCell(bitcoinDayInformation: BitcoinDayInformation, dateFormatter: DateFormatter) {
-		self.lowValueLabel.text = bitcoinDayInformation.low.formatAsEuroCurrency()
-		self.highValueLabel.text = bitcoinDayInformation.high.formatAsEuroCurrency()
-		self.closeValueLabel.text = bitcoinDayInformation.close.formatAsEuroCurrency()
+		self.lowValueLabel.text = bitcoinDayInformation.low.currencyFormat(for: "EUR")
+		self.highValueLabel.text = bitcoinDayInformation.high.currencyFormat(for: "EUR")
+		self.closeValueLabel.text = bitcoinDayInformation.close.currencyFormat(for: "EUR")
 		
 		let date = Date(timeIntervalSince1970: bitcoinDayInformation.time)
 		dateFormatter.dateStyle = .medium
