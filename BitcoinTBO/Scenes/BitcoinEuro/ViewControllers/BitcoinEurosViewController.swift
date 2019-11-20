@@ -8,19 +8,38 @@
 
 import UIKit
 
-class BitcoinEurosViewController            : UIViewController {
+class BitcoinEurosViewController			: UIViewController {
+	
+	// MARK: - Outlets
+	
+	@IBOutlet private weak var tableView	: BitcoinEuroTableView!
+	
+	// MARK: - Properties
+	
+	var bitcoinEuroDataSource				= BitcoinEuroDataSource()
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		
+		self.setupTableView()
+		self.bitcoinEuroDataSource.fetchBitcoinInformations { [weak self] (error: Error?) in
+			if let error = error {
+				self?.showSimpleAlertController(message: error.localizedDescription)
+				return
+			}
 
-    // MARK: - Outlets
-    
-    @IBOutlet private weak var tableView    : BitcoinEuroTableView!
-    
-    // MARK: - Properties
-    
-    var bitcoinEuroDataSource               = BitcoinEuroDataSource()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+			DispatchQueue.main.async {
+				self?.tableView.reloadData()
+			}
+		}
+	}
+}
 
-        // Do any additional setup after loading the view.
-    }
+// MARK: - Setup Methods
+
+extension BitcoinEurosViewController {
+	
+	private func setupTableView() {
+		self.tableView.setupTableView(self.bitcoinEuroDataSource)
+	}
 }

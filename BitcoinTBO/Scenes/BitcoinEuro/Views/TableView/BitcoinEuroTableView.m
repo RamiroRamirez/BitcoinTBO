@@ -12,7 +12,8 @@
 
 - (void)setupTableView:(nullable id <UITableViewDataSource>)bitcoinEuroDataSource {
     self.dataSource = bitcoinEuroDataSource;
+	
+	[self registerNib:[UINib nibWithNibName: @"BitcoinInformationCell" bundle: nil] forCellReuseIdentifier: @"BitcoinInformationCell"];
 }
-
 
 @end

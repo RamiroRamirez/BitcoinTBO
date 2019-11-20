@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ydA-qf-olQ">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="bFX-eM-jPh">
+            <objects>
+                <navigationController id="ydA-qf-olQ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eaE-fD-lTI">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="WHl-uV-pzN" kind="relationship" relationship="rootViewController" id="sNI-Ss-3WA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="06a-q9-LnF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1221" y="120"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Efo-rZ-v2X">
+            <objects>
+                <viewController id="WHl-uV-pzN" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8RD-qb-DZS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7co-DK-aEE">
+                                <rect key="frame" x="0.0" y="158" width="414" height="738"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="embed" id="CdB-SQ-AKb"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uPp-do-ja0">
+                                <rect key="frame" x="0.0" y="88" width="414" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="uDn-tH-B2p"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="P3P-6g-KCN" kind="embed" id="sTk-DF-WwS"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="7co-DK-aEE" secondAttribute="bottom" id="4v8-dn-eww"/>
+                            <constraint firstItem="uPp-do-ja0" firstAttribute="leading" secondItem="NTn-CY-b9w" secondAttribute="leading" id="VAN-tQ-PM0"/>
+                            <constraint firstItem="uPp-do-ja0" firstAttribute="trailing" secondItem="NTn-CY-b9w" secondAttribute="trailing" id="VGD-j4-eS3"/>
+                            <constraint firstItem="7co-DK-aEE" firstAttribute="leading" secondItem="NTn-CY-b9w" secondAttribute="leading" id="cfm-OZ-zjo"/>
+                            <constraint firstItem="uPp-do-ja0" firstAttribute="top" secondItem="NTn-CY-b9w" secondAttribute="top" id="gUU-at-w1Y"/>
+                            <constraint firstItem="7co-DK-aEE" firstAttribute="top" secondItem="uPp-do-ja0" secondAttribute="bottom" id="jgb-H5-xWJ"/>
+                            <constraint firstItem="7co-DK-aEE" firstAttribute="trailing" secondItem="NTn-CY-b9w" secondAttribute="trailing" id="qzY-Hj-Xj7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="NTn-CY-b9w"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="XJM-CF-IEc"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sZO-iH-qfg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-284.05797101449275" y="119.86607142857142"/>
+        </scene>
+        <!--Bitcoin Euros View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="BitcoinEurosViewController" customModule="BitcoinTBO" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="738"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ezW-9P-iKH" customClass="BitcoinEuroTableView">
+                                <rect key="frame" x="0.0" y="44" width="414" height="694"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="ezW-9P-iKH" secondAttribute="bottom" id="1Rk-yA-alF"/>
+                            <constraint firstItem="ezW-9P-iKH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9gf-rW-47p"/>
+                            <constraint firstItem="ezW-9P-iKH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="DrH-n0-wPz"/>
+                            <constraint firstItem="ezW-9P-iKH" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="YZB-rg-Fv2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="9sP-xp-2PW"/>
+                    <connections>
+                        <outlet property="tableView" destination="ezW-9P-iKH" id="9r9-GS-3ga"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="797" y="120"/>
+        </scene>
+        <!--Current Bitcoin Infos View Controller-->
+        <scene sceneID="j5i-Dc-BTb">
+            <objects>
+                <viewController id="P3P-6g-KCN" customClass="CurrentBitcoinInfosViewController" customModule="BitcoinTBO" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PZ1-gp-bnp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s8f-ux-bF1">
+                                <rect key="frame" x="203" y="24.5" width="8" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="s8f-ux-bF1" firstAttribute="centerY" secondItem="PZ1-gp-bnp" secondAttribute="centerY" id="IFH-P4-IEL"/>
+                            <constraint firstItem="s8f-ux-bF1" firstAttribute="centerX" secondItem="PZ1-gp-bnp" secondAttribute="centerX" id="IZ4-IU-dqS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="currentBitcoinValueLabel" destination="s8f-ux-bF1" id="KHo-c6-nMc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pg3-XN-MCN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-286.95652173913044" y="-347.54464285714283"/>
+        </scene>
+    </scenes>
+</document>

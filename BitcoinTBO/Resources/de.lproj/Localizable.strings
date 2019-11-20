@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  BitcoinTBO
+
+  Created by Ramiro Ramirez on 19.11.19.
+  Copyright © 2019 Ramiro Ramirez. All rights reserved.
+*/
+
+// MARK: - General
+
+"Accept" = "Ok";
+"Wrong.format" = "Etwas ist schief gelaufen, das Format der Anfrage oder der Antwort ist falsch";
+"Current.Bitcoin.Value" = "Aktueller Bitcoin-Wert:";
+
