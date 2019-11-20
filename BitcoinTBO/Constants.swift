@@ -31,6 +31,9 @@ struct Constants {
 			case euro		= "EUR"
 		}
     }
+}
+
+extension Constants {
 	
 	struct Cells {
 		
@@ -41,5 +44,18 @@ struct Constants {
 		enum reuseIdentifier: String {
 			case bitcoinInformationCell = "BitcoinInformationCell"
 		}
+	}
+
+	enum Segues: String {
+
+		case toCurrentBitcoinInfosViewController	= "toCurrentBitcoinInfosViewController"
+		case toBitcoinEurosViewController			= "toBitcoinEurosViewController"
+	}
+}
+
+extension Constants {
+
+	struct UI {
+		static let currentBitcoinViewActiveHeight	: CGFloat = 70
 	}
 }
