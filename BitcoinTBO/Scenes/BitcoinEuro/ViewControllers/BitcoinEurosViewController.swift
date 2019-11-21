@@ -33,12 +33,12 @@ class BitcoinEurosViewController						: UIViewController {
 	private func fetchData() {
 
 		self.bitcoinEuroDataSource.fetchBitcoinInformations { [weak self] (error: Error?) in
-			if let error = error {
-				self?.showSimpleAlertController(message: error.localizedDescription)
-				return
-			}
-
 			DispatchQueue.main.async {
+				if let error = error {
+					self?.showSimpleAlertController(message: error.localizedDescription)
+					return
+				}
+
 				self?.tableView.reloadData()
 			}
 		}

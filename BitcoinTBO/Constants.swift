@@ -21,15 +21,18 @@ struct Constants {
 		}
 		
 		enum Keys: String {
-			case fsym 		= "fsym"
-			case tsym 		= "tsym"
-			case tsyms 		= "tsyms"
+			case fsym 				= "fsym"
+			case tsym 				= "tsym"
+			case tsyms 				= "tsyms"
+			case limit				= "limit"
 		}
 		
 		enum Values: String {
-			case bitcoin 	= "BTC"
-			case euro		= "EUR"
+			case bitcoin 			= "BTC"
+			case euro				= "EUR"
 		}
+
+		static let historicalLimit	= 14
     }
 }
 

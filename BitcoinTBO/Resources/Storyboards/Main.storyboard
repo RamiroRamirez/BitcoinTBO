@@ -120,7 +120,6 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="s8f-ux-bF1" firstAttribute="centerY" secondItem="PZ1-gp-bnp" secondAttribute="centerY" id="IFH-P4-IEL"/>
                             <constraint firstItem="s8f-ux-bF1" firstAttribute="centerX" secondItem="PZ1-gp-bnp" secondAttribute="centerX" id="IZ4-IU-dqS"/>

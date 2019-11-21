@@ -22,8 +22,9 @@ private enum FetchCase {
 	var parameters: [String: Any]? {
 		switch self {
 		case .historyBitcoinInfos:
-			return [Constants.API.Keys.fsym.rawValue: Constants.API.Values.bitcoin.rawValue,
-					Constants.API.Keys.tsym.rawValue: CurrencySelectionManager.shared.currentCurrency.isoCode]
+			return [Constants.API.Keys.fsym.rawValue	: Constants.API.Values.bitcoin.rawValue,
+					Constants.API.Keys.tsym.rawValue	: CurrencySelectionManager.shared.currentCurrency.isoCode,
+					Constants.API.Keys.limit.rawValue	: String(Constants.API.historicalLimit)]
 		case .currentBitcoinInfos:
 			return [Constants.API.Keys.fsym.rawValue: Constants.API.Values.bitcoin.rawValue,
 					Constants.API.Keys.tsyms.rawValue: CurrencySelectionManager.shared.currentCurrency.isoCode]
