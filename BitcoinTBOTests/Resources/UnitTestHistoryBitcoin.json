@@ -1,0 +1,201 @@
+{
+    "Response": "Success",
+    "Message": "",
+    "HasWarning": false,
+    "Type": 100,
+    "RateLimit": {},
+    "Data": {
+        "Aggregated": false,
+        "TimeFrom": 1573084800,
+        "TimeTo": 1574294400,
+        "Data": [
+            {
+                "time": 1573084800,
+                "high": 9382.63,
+                "low": 9114.14,
+                "open": 9347.27,
+                "volumefrom": 21322.07,
+                "volumeto": 196879610.6,
+                "close": 9208.52,
+                "conversionType": "direct",
+                "conversionSymbol": ""
+            },
+            {
+                "time": 1573171200,
+                "high": 9263.83,
+                "low": 8682.74,
+                "open": 9208.52,
+                "volumefrom": 41674.91,
+                "volumeto": 371135404.96,
+                "close": 8772.31,
+                "conversionType": "direct",
+                "conversionSymbol": ""
+            },
+            {
+                "time": 1573257600,
+                "high": 8881.08,
+                "low": 8732.62,
+                "open": 8772.31,
+                "volumefrom": 13145.33,
+                "volumeto": 116025279.26,
+                "close": 8822.19,
+                "conversionType": "direct",
+                "conversionSymbol": ""
+            },
+            {
+                "time": 1573344000,
+                "high": 9126.98,
+                "low": 8767.94,
+                "open": 8822.19,
+                "volumefrom": 18134.09,
+                "volumeto": 162649216.87,
+                "close": 9045.85,
+                "conversionType": "direct",
+                "conversionSymbol": ""
+            },
+            {
+                "time": 1573430400,
+                "high": 9084.49,
+                "low": 8619.78,
+                "open": 9045.85,
+                "volumefrom": 25750.4,
+                "volumeto": 226035620.33,
+                "close": 8726.31,
+                "conversionType": "direct",
+                "conversionSymbol": ""
+            },
+            {
+                "time": 1573516800,
+                "high": 8868.85,
+                "low": 8576.09,
+                "open": 8726.31,
+                "volumefrom": 22305.54,
+                "volumeto": 194901130.1,
+                "close": 8815.14,
+                "conversionType": "direct",
+                "conversionSymbol": ""
+            },
+            {
+                "time": 1573603200,
+                "high": 8840.33,
+                "low": 8721.68,
+                "open": 8815.14,
+                "volumefrom": 15828.57,
+                "volumeto": 138900524.48,
+                "close": 8773.82,
+                "conversionType": "direct",
+                "conversionSymbol": ""
+            },
+            {
+                "time": 1573689600,
+                "high": 8811.04,
+                "low": 8584.92,
+                "open": 8773.82,
+                "volumefrom": 18999.7,
+                "volumeto": 164630654.03,
+                "close": 8640.42,
+                "conversionType": "direct",
+                "conversionSymbol": ""
+            },
+            {
+                "time": 1573776000,
+                "high": 8773.4,
+                "low": 8393.29,
+                "open": 8640.42,
+                "volumefrom": 31281.14,
+                "volumeto": 267441968.16,
+                "close": 8468.57,
+                "conversionType": "direct",
+                "conversionSymbol": ""
+            },
+            {
+                "time": 1573862400,
+                "high": 8539.42,
+                "low": 8442.03,
+                "open": 8468.57,
+                "volumefrom": 9355.13,
+                "volumeto": 79597461.02,
+                "close": 8498.94,
+                "conversionType": "direct",
+                "conversionSymbol": ""
+            },
+            {
+                "time": 1573948800,
+                "high": 8641.12,
+                "low": 8411.3,
+                "open": 8498.94,
+                "volumefrom": 14296.75,
+                "volumeto": 122271717.68,
+                "close": 8515.28,
+                "conversionType": "direct",
+                "conversionSymbol": ""
+            },
+            {
+                "time": 1574035200,
+                "high": 8537.87,
+                "low": 8075.63,
+                "open": 8515.28,
+                "volumefrom": 30048.32,
+                "volumeto": 250358969.38,
+                "close": 8190.16,
+                "conversionType": "direct",
+                "conversionSymbol": ""
+            },
+            {
+                "time": 1574121600,
+                "high": 8215.95,
+                "low": 8016.54,
+                "open": 8190.16,
+                "volumefrom": 24402.6,
+                "volumeto": 198180594.35,
+                "close": 8133.57,
+                "conversionType": "direct",
+                "conversionSymbol": ""
+            },
+            {
+                "time": 1574208000,
+                "high": 8232.23,
+                "low": 8047.73,
+                "open": 8133.57,
+                "volumefrom": 18105.11,
+                "volumeto": 147086043.41,
+                "close": 8093.6,
+                "conversionType": "direct",
+                "conversionSymbol": ""
+            },
+            {
+                "time": 1574294400,
+                "high": 8133.73,
+                "low": 7437.33,
+                "open": 8093.6,
+                "volumefrom": 35822.03,
+                "volumeto": 278730875.79,
+                "close": 7585.35,
+                "conversionType": "direct",
+                "conversionSymbol": ""
+            },
+            {
+                "time": 1574294400,
+                "high": 8133.73,
+                "low": 7437.33,
+                "open": 8093.6,
+                "volumefrom": 35822.03,
+                "volumeto": 278730875.79,
+                "close": 7585.35,
+                "conversionType": "direct",
+                "conversionSymbol": ""
+            },
+            {
+                "time": 1574294400,
+                "high": 8133.73,
+                "low": 7437.33,
+                "open": 8093.6,
+                "volumefrom": 35822.03,
+                "volumeto": 278730875.79,
+                "close": 7585.35,
+                "conversionType": "direct",
+                "conversionSymbol": ""
+            }
+        ]
+    }
+}
