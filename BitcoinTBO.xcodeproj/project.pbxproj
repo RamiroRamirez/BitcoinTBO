@@ -41,8 +41,8 @@
 		B6408D80238478BC0029A720 /* Array+SafeIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6408D7E238478BC0029A720 /* Array+SafeIndex.swift */; };
 		B6408D82238482CF0029A720 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6408D81238482CF0029A720 /* RoundedView.swift */; };
 		B6408D83238482CF0029A720 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6408D81238482CF0029A720 /* RoundedView.swift */; };
-		B6408D852384855A0029A720 /* Double+EuroFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6408D842384855A0029A720 /* Double+EuroFormatter.swift */; };
-		B6408D862384855A0029A720 /* Double+EuroFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6408D842384855A0029A720 /* Double+EuroFormatter.swift */; };
+		B6408D852384855A0029A720 /* Double+CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6408D842384855A0029A720 /* Double+CurrencyFormatter.swift */; };
+		B6408D862384855A0029A720 /* Double+CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6408D842384855A0029A720 /* Double+CurrencyFormatter.swift */; };
 		B6408D8C238491D10029A720 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6408D89238491D10029A720 /* Main.storyboard */; };
 		B6408D8D238491D10029A720 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6408D8A238491D10029A720 /* LaunchScreen.storyboard */; };
 		B6408D8E238491D10029A720 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6408D8B238491D10029A720 /* Assets.xcassets */; };
@@ -95,7 +95,7 @@
 		B6408D782384772A0029A720 /* BitcoinInformationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinInformationCell.swift; sourceTree = "<group>"; };
 		B6408D7E238478BC0029A720 /* Array+SafeIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+SafeIndex.swift"; sourceTree = "<group>"; };
 		B6408D81238482CF0029A720 /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
-		B6408D842384855A0029A720 /* Double+EuroFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+EuroFormatter.swift"; sourceTree = "<group>"; };
+		B6408D842384855A0029A720 /* Double+CurrencyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+CurrencyFormatter.swift"; sourceTree = "<group>"; };
 		B6408D89238491D10029A720 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B6408D8A238491D10029A720 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B6408D8B238491D10029A720 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -158,6 +158,14 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		2820130523870DD6004B9276 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B6D1BB65238328EF0050696E /* BitcoinTBO-Bridging-Header.h */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		28A96F7C2385F6E500729566 /* CurrencySelection */ = {
 			isa = PBXGroup;
 			children = (
@@ -207,7 +215,7 @@
 			children = (
 				B6408D73238475E10029A720 /* UIViewController+UIAlertController.swift */,
 				B6408D7E238478BC0029A720 /* Array+SafeIndex.swift */,
-				B6408D842384855A0029A720 /* Double+EuroFormatter.swift */,
+				B6408D842384855A0029A720 /* Double+CurrencyFormatter.swift */,
 				B6408D9923849AA30029A720 /* URL+AddPath.swift */,
 			);
 			path = Extensions;
@@ -287,6 +295,7 @@
 				B6408D72238475C10029A720 /* Extensions */,
 				B6EA428923845047002C33F7 /* API */,
 				B6D1BB5B238324260050696E /* Scenes */,
+				2820130523870DD6004B9276 /* Helpers */,
 				B6408D87238491D10029A720 /* Resources */,
 				B6D1BB4723831EA50050696E /* Info.plist */,
 			);
@@ -308,8 +317,8 @@
 		B6D1BB5B238324260050696E /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				28A96F7C2385F6E500729566 /* CurrencySelection */,
 				B6D1BB5C2383244A0050696E /* BitcoinEuro */,
+				28A96F7C2385F6E500729566 /* CurrencySelection */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -351,7 +360,6 @@
 				B6408D6923846C810029A720 /* BitcoinData.swift */,
 				B6408D6C23846CB50029A720 /* BitcoinSubdata.swift */,
 				B6EA429023846202002C33F7 /* BitcoinDayInformation.swift */,
-				B6D1BB65238328EF0050696E /* BitcoinTBO-Bridging-Header.h */,
 				B6408D9F2384A8830029A720 /* Bitcoin.swift */,
 			);
 			path = Models;
@@ -503,7 +511,7 @@
 				B6D1BB6D238329B40050696E /* BitcoinEuroTableView.m in Sources */,
 				B6EA428E238452B1002C33F7 /* Constants.swift in Sources */,
 				28A96F7B2385B4BD00729566 /* CurrencySelectionDataSource.swift in Sources */,
-				B6408D852384855A0029A720 /* Double+EuroFormatter.swift in Sources */,
+				B6408D852384855A0029A720 /* Double+CurrencyFormatter.swift in Sources */,
 				B6408D6A23846C810029A720 /* BitcoinData.swift in Sources */,
 				B6408D74238475E10029A720 /* UIViewController+UIAlertController.swift in Sources */,
 				B6408DA02384A8830029A720 /* Bitcoin.swift in Sources */,
@@ -522,7 +530,7 @@
 				282012F02386FF28004B9276 /* BitcoinInformationManager.swift in Sources */,
 				282012E42386FC78004B9276 /* CurrencySelectionTableViewCell.swift in Sources */,
 				282012FF238708C9004B9276 /* APIManagerMockTest.swift in Sources */,
-				B6408D862384855A0029A720 /* Double+EuroFormatter.swift in Sources */,
+				B6408D862384855A0029A720 /* Double+CurrencyFormatter.swift in Sources */,
 				282012E32386FC72004B9276 /* URL+AddPath.swift in Sources */,
 				282012F42387024F004B9276 /* Constants+API.swift in Sources */,
 				282012EA2386FC8F004B9276 /* BitcoinEuroTableView.m in Sources */,
@@ -693,7 +701,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ramram.BitcoinTBO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "BitcoinTBO/Scenes/BitcoinEuro/Models/BitcoinTBO-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "BitcoinTBO/Helpers/BitcoinTBO-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -715,7 +723,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ramram.BitcoinTBO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "BitcoinTBO/Scenes/BitcoinEuro/Models/BitcoinTBO-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "BitcoinTBO/Helpers/BitcoinTBO-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
