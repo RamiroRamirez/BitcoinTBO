@@ -21,25 +21,47 @@ struct Constants {
 		}
 		
 		enum Keys: String {
-			case fsym 		= "fsym"
-			case tsym 		= "tsym"
-			case tsyms 		= "tsyms"
+			case fsym 				= "fsym"
+			case tsym 				= "tsym"
+			case tsyms 				= "tsyms"
+			case limit				= "limit"
 		}
 		
 		enum Values: String {
-			case bitcoin 	= "BTC"
-			case euro		= "EUR"
+			case bitcoin 			= "BTC"
+			case euro				= "EUR"
 		}
+
+		static let historicalLimit	= 14
     }
+}
+
+extension Constants {
 	
 	struct Cells {
 		
 		enum nibName: String {
-			case bitcoinInformationCell = "BitcoinInformationCell"
+			case bitcoinInformationCell 		= "BitcoinInformationCell"
+			case currencySelectionTableViewCell	= "CurrencySelectionTableViewCell"
 		}
 		
 		enum reuseIdentifier: String {
-			case bitcoinInformationCell = "BitcoinInformationCell"
+			case bitcoinInformationCell 		= "BitcoinInformationCell"
+			case currencySelectionTableViewCell	= "CurrencySelectionTableViewCell"
 		}
+	}
+
+	enum Segues: String {
+
+		case toCurrentBitcoinInfosViewController	= "toCurrentBitcoinInfosViewController"
+		case toBitcoinEurosViewController			= "toBitcoinEurosViewController"
+		case toCurrencySelectionViewController		= "toCurrencySelectionViewController"
+	}
+}
+
+extension Constants {
+
+	struct UI {
+		static let currentBitcoinViewActiveHeight	: CGFloat = 70
 	}
 }

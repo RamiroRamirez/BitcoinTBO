@@ -20,12 +20,18 @@ class CurrentBitcoinInfosViewController: UIViewController {
 
 	// MARK: - View Life Cycle
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		
 		self.fetchCurrentBitcoinInformation()
 		self.setTimerForRequest()
-    }
+	}
+
+	func reloadData() {
+		self.fetchCurrentBitcoinInformationTimer?.invalidate()
+		self.fetchCurrentBitcoinInformation()
+		self.setTimerForRequest()
+	}
 	
 	deinit {
 		self.fetchCurrentBitcoinInformationTimer?.invalidate()
@@ -58,11 +64,17 @@ extension CurrentBitcoinInfosViewController {
 			self.showSimpleAlertController(message: error.localizedDescription)
 			return
 		}
+
+		var bitcoinValue: Double?
+		switch CurrencySelectionManager.shared.currentCurrency {
+		case .dollar	: bitcoinValue = bitcoin?.valueInDollars
+		case .euro		: bitcoinValue = bitcoin?.valueInEuros
+		case .pound		: bitcoinValue = bitcoin?.valueInPounds
+		}
 		
 		guard
-			let bitcoinValueInEuros = bitcoin?.valueInEuros,
-			let bitcoinValueInEurosString = bitcoinValueInEuros.formatAsEuroCurrency() else {
-				
+			let bitcoinValueInEuros = bitcoinValue,
+			let bitcoinValueInEurosString = bitcoinValueInEuros.currencyFormat(for: CurrencySelectionManager.shared.currentCurrency.isoCode) else {
 				self.showSimpleAlertController(message: APIManager.Invalid.format.localizedError.localizedDescription)
 				return
 		}

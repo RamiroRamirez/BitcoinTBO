@@ -8,27 +8,40 @@
 
 import UIKit
 
-class BitcoinEurosViewController			: UIViewController {
+class BitcoinEurosViewController						: UIViewController {
 	
 	// MARK: - Outlets
 	
-	@IBOutlet private weak var tableView	: BitcoinEuroTableView!
+	@IBOutlet private weak var tableView				: BitcoinEuroTableView!
 	
 	// MARK: - Properties
 	
-	var bitcoinEuroDataSource				= BitcoinEuroDataSource()
-	
+	var bitcoinEuroDataSource							= BitcoinEuroDataSource()
+	var changeCurrentBitcoinInformationViewVisibility	: ((_ hide: Bool) -> Void)?
+
+	// MARK: - View Life Cycle
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
 		self.setupTableView()
-		self.bitcoinEuroDataSource.fetchBitcoinInformations { [weak self] (error: Error?) in
-			if let error = error {
-				self?.showSimpleAlertController(message: error.localizedDescription)
-				return
-			}
+		self.fetchData()
+	}
 
+	// MARK: - Reload/fetch data
+
+	func reloadData() {
+		self.fetchData()
+	}
+
+	private func fetchData() {
+		self.bitcoinEuroDataSource.fetchBitcoinInformations { [weak self] (error: Error?) in
 			DispatchQueue.main.async {
+				if let error = error {
+					self?.showSimpleAlertController(message: error.localizedDescription)
+					return
+				}
+
 				self?.tableView.reloadData()
 			}
 		}
@@ -41,5 +54,17 @@ extension BitcoinEurosViewController {
 	
 	private func setupTableView() {
 		self.tableView.setupTableView(self.bitcoinEuroDataSource)
+		self.tableView.delegate = self
 	}
+}
+
+// MARK: - Implementation UITableViewDelegate Protocol
+
+extension BitcoinEurosViewController: UITableViewDelegate {
+
+	func scrollViewDidScroll(_ scrollView: UIScrollView) {
+		let isCollectionViewScrollingDown = (scrollView.panGestureRecognizer.translation(in: scrollView).y < 0)
+		self.changeCurrentBitcoinInformationViewVisibility?(isCollectionViewScrollingDown)
+	}
+
 }

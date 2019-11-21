@@ -23,10 +23,10 @@
             </objects>
             <point key="canvasLocation" x="-1221" y="120"/>
         </scene>
-        <!--View Controller-->
+        <!--Bitcoin Euros Container View Controller-->
         <scene sceneID="Efo-rZ-v2X">
             <objects>
-                <viewController id="WHl-uV-pzN" sceneMemberID="viewController">
+                <viewController id="WHl-uV-pzN" customClass="BitcoinEurosContainerViewController" customModule="BitcoinTBO" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8RD-qb-DZS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -34,7 +34,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7co-DK-aEE">
                                 <rect key="frame" x="0.0" y="158" width="414" height="738"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="embed" id="CdB-SQ-AKb"/>
+                                    <segue destination="BYZ-38-t0r" kind="embed" identifier="toBitcoinEurosViewController" id="CdB-SQ-AKb"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uPp-do-ja0">
@@ -43,7 +43,7 @@
                                     <constraint firstAttribute="height" constant="70" id="uDn-tH-B2p"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="P3P-6g-KCN" kind="embed" id="sTk-DF-WwS"/>
+                                    <segue destination="P3P-6g-KCN" kind="embed" identifier="toCurrentBitcoinInfosViewController" id="sTk-DF-WwS"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -59,7 +59,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NTn-CY-b9w"/>
                     </view>
-                    <navigationItem key="navigationItem" id="XJM-CF-IEc"/>
+                    <navigationItem key="navigationItem" id="XJM-CF-IEc">
+                        <barButtonItem key="rightBarButtonItem" title="Currency" id="UQn-YK-5ST">
+                            <connections>
+                                <segue destination="gFg-W8-Dpl" kind="show" identifier="toCurrencySelectionViewController" id="IL3-2c-vME"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="currentBitcoinViewConstraint" destination="uDn-tH-B2p" id="m1b-73-3bz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sZO-iH-qfg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -111,11 +120,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="s8f-ux-bF1" firstAttribute="centerY" secondItem="PZ1-gp-bnp" secondAttribute="centerY" id="IFH-P4-IEL"/>
                             <constraint firstItem="s8f-ux-bF1" firstAttribute="centerX" secondItem="PZ1-gp-bnp" secondAttribute="centerX" id="IZ4-IU-dqS"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="3nq-ds-xte"/>
                     </view>
                     <connections>
                         <outlet property="currentBitcoinValueLabel" destination="s8f-ux-bF1" id="KHo-c6-nMc"/>
@@ -124,6 +133,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pg3-XN-MCN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-286.95652173913044" y="-347.54464285714283"/>
+        </scene>
+        <!--CurrencySelection-->
+        <scene sceneID="yQF-nh-64r">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CurrencySelection" id="gFg-W8-Dpl" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="xjF-jN-E9j"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q5J-7j-DjI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="796" y="-437"/>
         </scene>
     </scenes>
 </document>
