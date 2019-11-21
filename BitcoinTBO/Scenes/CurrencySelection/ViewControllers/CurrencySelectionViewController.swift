@@ -21,7 +21,9 @@ class CurrencySelectionViewController			: UIViewController {
 	// MARK: - Properties
 
 	var bitcoinEuroDataSource					= CurrencySelectionDataSource()
+	var originalCurrencySelected				= CurrencySelectionManager.shared.currentCurrency
 	weak var delegate							: CurrencySelectionDelegate?
+
 
 	// MARK: - View Life Cycle
 
@@ -30,6 +32,16 @@ class CurrencySelectionViewController			: UIViewController {
 
 		self.setupTableView()
     }
+
+	override func willMove(toParent parent: UIViewController?) {
+		super.willMove(toParent: parent)
+
+		if
+			(parent == nil),
+			self.originalCurrencySelected != CurrencySelectionManager.shared.currentCurrency {
+				self.delegate?.didSelectCurrency()
+		}
+	}
 }
 
 // MARK: - Setup Methods
@@ -57,6 +69,5 @@ extension CurrencySelectionViewController: UITableViewDelegate {
 
 		CurrencySelectionManager.shared.changeSelectedCurrency(currency: currency)
 		self.tableView.reloadData()
-		self.delegate?.didSelectCurrency()
 	}
 }
