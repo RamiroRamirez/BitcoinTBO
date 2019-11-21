@@ -1,0 +1,28 @@
+{
+    "Response": "Success",
+    "Message": "",
+    "HasWarning": false,
+    "Type": 100,
+    "RateLimit": {},
+    "Data": {
+        "Aggregated": false,
+        "TimeFrom": 1573084800,
+        "TimeTo": 1574294400,
+        "Data": [
+            {
+                "time": 1573084800,
+                "high": 9382.63,
+                "low": 9114.14,
+                "open": 9347.27,
+                "volumefrom": 21322.07,
+                "volumeto": 196879610.6,
+                "close": 9208.52,
+                "conversionType": "direct",
+                "conversionSymbol": ""
+            },
+            {
+                "time": 1573171200,
+                "high": 9263.83,
+                "low": 8682.74,
+                "open": 9208.52,
+               

@@ -7,7 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		28A96F6D2385AF4000729566 /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A96F6C2385AF4000729566 /* CurrencyFormatter.swift */; };
+		282012DB2386F1A8004B9276 /* APIManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282012DA2386F1A8004B9276 /* APIManagerTest.swift */; };
+		282012E02386FC65004B9276 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1BB3923831EA40050696E /* AppDelegate.swift */; };
+		282012E32386FC72004B9276 /* URL+AddPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6408D9923849AA30029A720 /* URL+AddPath.swift */; };
+		282012E42386FC78004B9276 /* CurrencySelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A96F702385B36100729566 /* CurrencySelectionTableViewCell.swift */; };
+		282012EA2386FC8F004B9276 /* BitcoinEuroTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D1BB6C238329B40050696E /* BitcoinEuroTableView.m */; };
+		282012EB2386FC9B004B9276 /* Bitcoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6408D9F2384A8830029A720 /* Bitcoin.swift */; };
+		282012EF2386FF15004B9276 /* BitcoinInformationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6408D6F23846D4F0029A720 /* BitcoinInformationManager.swift */; };
+		282012F02386FF28004B9276 /* BitcoinInformationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6408D6F23846D4F0029A720 /* BitcoinInformationManager.swift */; };
+		282012F32387024F004B9276 /* Constants+API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282012F22387024F004B9276 /* Constants+API.swift */; };
+		282012F42387024F004B9276 /* Constants+API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282012F22387024F004B9276 /* Constants+API.swift */; };
+		282012F5238702D3004B9276 /* CurrencySelectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A96F782385B47600729566 /* CurrencySelectionManager.swift */; };
+		282012F723870312004B9276 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282012F623870312004B9276 /* Currency.swift */; };
+		282012F823870312004B9276 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282012F623870312004B9276 /* Currency.swift */; };
+		282012FA2387061F004B9276 /* UnitTestHistoryBitcoin.json in Resources */ = {isa = PBXBuildFile; fileRef = 282012F92387061E004B9276 /* UnitTestHistoryBitcoin.json */; };
+		282012FF238708C9004B9276 /* APIManagerMockTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282012FE238708C9004B9276 /* APIManagerMockTest.swift */; };
+		2820130223870BA2004B9276 /* UnitTestBadHistoryBitcoin.json in Resources */ = {isa = PBXBuildFile; fileRef = 2820130023870BA1004B9276 /* UnitTestBadHistoryBitcoin.json */; };
+		2820130323870BA2004B9276 /* UnitTestCurrentBitCoinInformation.json in Resources */ = {isa = PBXBuildFile; fileRef = 2820130123870BA2004B9276 /* UnitTestCurrentBitCoinInformation.json */; };
+		28A96F6D2385AF4000729566 /* CurrencyFormatterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A96F6C2385AF4000729566 /* CurrencyFormatterTest.swift */; };
 		28A96F6F2385B2A800729566 /* CurrencySelection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28A96F6E2385B2A800729566 /* CurrencySelection.storyboard */; };
 		28A96F722385B36100729566 /* CurrencySelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A96F702385B36100729566 /* CurrencySelectionTableViewCell.swift */; };
 		28A96F752385B38100729566 /* CurrencySelectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28A96F742385B38100729566 /* CurrencySelectionTableViewCell.xib */; };
@@ -18,16 +35,14 @@
 		B6408D6B23846C810029A720 /* BitcoinData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6408D6923846C810029A720 /* BitcoinData.swift */; };
 		B6408D6D23846CB50029A720 /* BitcoinSubdata.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6408D6C23846CB50029A720 /* BitcoinSubdata.swift */; };
 		B6408D6E23846CB50029A720 /* BitcoinSubdata.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6408D6C23846CB50029A720 /* BitcoinSubdata.swift */; };
-		B6408D7023846D4F0029A720 /* BitcoinInformationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6408D6F23846D4F0029A720 /* BitcoinInformationManager.swift */; };
 		B6408D74238475E10029A720 /* UIViewController+UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6408D73238475E10029A720 /* UIViewController+UIAlertController.swift */; };
 		B6408D7A2384772A0029A720 /* BitcoinInformationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6408D782384772A0029A720 /* BitcoinInformationCell.swift */; };
-		B6408D7B2384772A0029A720 /* BitcoinInformationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6408D782384772A0029A720 /* BitcoinInformationCell.swift */; };
 		B6408D7F238478BC0029A720 /* Array+SafeIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6408D7E238478BC0029A720 /* Array+SafeIndex.swift */; };
 		B6408D80238478BC0029A720 /* Array+SafeIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6408D7E238478BC0029A720 /* Array+SafeIndex.swift */; };
 		B6408D82238482CF0029A720 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6408D81238482CF0029A720 /* RoundedView.swift */; };
 		B6408D83238482CF0029A720 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6408D81238482CF0029A720 /* RoundedView.swift */; };
-		B6408D852384855A0029A720 /* Double+EuroFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6408D842384855A0029A720 /* Double+EuroFormatter.swift */; };
-		B6408D862384855A0029A720 /* Double+EuroFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6408D842384855A0029A720 /* Double+EuroFormatter.swift */; };
+		B6408D852384855A0029A720 /* Double+CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6408D842384855A0029A720 /* Double+CurrencyFormatter.swift */; };
+		B6408D862384855A0029A720 /* Double+CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6408D842384855A0029A720 /* Double+CurrencyFormatter.swift */; };
 		B6408D8C238491D10029A720 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6408D89238491D10029A720 /* Main.storyboard */; };
 		B6408D8D238491D10029A720 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6408D8A238491D10029A720 /* LaunchScreen.storyboard */; };
 		B6408D8E238491D10029A720 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6408D8B238491D10029A720 /* Assets.xcassets */; };
@@ -38,7 +53,6 @@
 		B6408D9E2384A7EA0029A720 /* CurrentBitcoinInfosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6408D9D2384A7EA0029A720 /* CurrentBitcoinInfosViewController.swift */; };
 		B6408DA02384A8830029A720 /* Bitcoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6408D9F2384A8830029A720 /* Bitcoin.swift */; };
 		B6D1BB3A23831EA40050696E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1BB3923831EA40050696E /* AppDelegate.swift */; };
-		B6D1BB5123831EA50050696E /* BitcoinTBOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1BB5023831EA50050696E /* BitcoinTBOTests.swift */; };
 		B6D1BB5E2383246E0050696E /* BitcoinEurosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1BB5D2383246E0050696E /* BitcoinEurosViewController.swift */; };
 		B6D1BB63238326AF0050696E /* BitcoinEuroDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1BB62238326AF0050696E /* BitcoinEuroDataSource.swift */; };
 		B6D1BB6D238329B40050696E /* BitcoinEuroTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D1BB6C238329B40050696E /* BitcoinEuroTableView.m */; };
@@ -60,7 +74,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		28A96F6C2385AF4000729566 /* CurrencyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
+		282012DA2386F1A8004B9276 /* APIManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManagerTest.swift; sourceTree = "<group>"; };
+		282012F22387024F004B9276 /* Constants+API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constants+API.swift"; sourceTree = "<group>"; };
+		282012F623870312004B9276 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		282012F92387061E004B9276 /* UnitTestHistoryBitcoin.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UnitTestHistoryBitcoin.json; sourceTree = "<group>"; };
+		282012FE238708C9004B9276 /* APIManagerMockTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManagerMockTest.swift; sourceTree = "<group>"; };
+		2820130023870BA1004B9276 /* UnitTestBadHistoryBitcoin.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UnitTestBadHistoryBitcoin.json; sourceTree = "<group>"; };
+		2820130123870BA2004B9276 /* UnitTestCurrentBitCoinInformation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UnitTestCurrentBitCoinInformation.json; sourceTree = "<group>"; };
+		28A96F6C2385AF4000729566 /* CurrencyFormatterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatterTest.swift; sourceTree = "<group>"; };
 		28A96F6E2385B2A800729566 /* CurrencySelection.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CurrencySelection.storyboard; sourceTree = "<group>"; };
 		28A96F702385B36100729566 /* CurrencySelectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencySelectionTableViewCell.swift; sourceTree = "<group>"; };
 		28A96F742385B38100729566 /* CurrencySelectionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CurrencySelectionTableViewCell.xib; sourceTree = "<group>"; };
@@ -74,7 +95,7 @@
 		B6408D782384772A0029A720 /* BitcoinInformationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinInformationCell.swift; sourceTree = "<group>"; };
 		B6408D7E238478BC0029A720 /* Array+SafeIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+SafeIndex.swift"; sourceTree = "<group>"; };
 		B6408D81238482CF0029A720 /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
-		B6408D842384855A0029A720 /* Double+EuroFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+EuroFormatter.swift"; sourceTree = "<group>"; };
+		B6408D842384855A0029A720 /* Double+CurrencyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+CurrencyFormatter.swift"; sourceTree = "<group>"; };
 		B6408D89238491D10029A720 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B6408D8A238491D10029A720 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B6408D8B238491D10029A720 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -90,7 +111,6 @@
 		B6D1BB3923831EA40050696E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6D1BB4723831EA50050696E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6D1BB4C23831EA50050696E /* BitcoinTBOTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BitcoinTBOTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B6D1BB5023831EA50050696E /* BitcoinTBOTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinTBOTests.swift; sourceTree = "<group>"; };
 		B6D1BB5223831EA50050696E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6D1BB5D2383246E0050696E /* BitcoinEurosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinEurosViewController.swift; sourceTree = "<group>"; };
 		B6D1BB62238326AF0050696E /* BitcoinEuroDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinEuroDataSource.swift; sourceTree = "<group>"; };
@@ -120,6 +140,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		282012FB2387087E004B9276 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				282012FE238708C9004B9276 /* APIManagerMockTest.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		2820130423870BAC004B9276 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2820130023870BA1004B9276 /* UnitTestBadHistoryBitcoin.json */,
+				2820130123870BA2004B9276 /* UnitTestCurrentBitCoinInformation.json */,
+				282012F92387061E004B9276 /* UnitTestHistoryBitcoin.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		2820130523870DD6004B9276 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B6D1BB65238328EF0050696E /* BitcoinTBO-Bridging-Header.h */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		28A96F7C2385F6E500729566 /* CurrencySelection */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +189,7 @@
 			children = (
 				28A96F782385B47600729566 /* CurrencySelectionManager.swift */,
 				28A96F7A2385B4BD00729566 /* CurrencySelectionDataSource.swift */,
+				282012F623870312004B9276 /* Currency.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -168,7 +215,7 @@
 			children = (
 				B6408D73238475E10029A720 /* UIViewController+UIAlertController.swift */,
 				B6408D7E238478BC0029A720 /* Array+SafeIndex.swift */,
-				B6408D842384855A0029A720 /* Double+EuroFormatter.swift */,
+				B6408D842384855A0029A720 /* Double+CurrencyFormatter.swift */,
 				B6408D9923849AA30029A720 /* URL+AddPath.swift */,
 			);
 			path = Extensions;
@@ -244,9 +291,11 @@
 			children = (
 				B6D1BB3923831EA40050696E /* AppDelegate.swift */,
 				B6EA428D238452B1002C33F7 /* Constants.swift */,
+				282012F22387024F004B9276 /* Constants+API.swift */,
 				B6408D72238475C10029A720 /* Extensions */,
 				B6EA428923845047002C33F7 /* API */,
 				B6D1BB5B238324260050696E /* Scenes */,
+				2820130523870DD6004B9276 /* Helpers */,
 				B6408D87238491D10029A720 /* Resources */,
 				B6D1BB4723831EA50050696E /* Info.plist */,
 			);
@@ -256,8 +305,10 @@
 		B6D1BB4F23831EA50050696E /* BitcoinTBOTests */ = {
 			isa = PBXGroup;
 			children = (
-				B6D1BB5023831EA50050696E /* BitcoinTBOTests.swift */,
-				28A96F6C2385AF4000729566 /* CurrencyFormatter.swift */,
+				2820130423870BAC004B9276 /* Resources */,
+				282012FB2387087E004B9276 /* Mocks */,
+				282012DA2386F1A8004B9276 /* APIManagerTest.swift */,
+				28A96F6C2385AF4000729566 /* CurrencyFormatterTest.swift */,
 				B6D1BB5223831EA50050696E /* Info.plist */,
 			);
 			path = BitcoinTBOTests;
@@ -266,8 +317,8 @@
 		B6D1BB5B238324260050696E /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				28A96F7C2385F6E500729566 /* CurrencySelection */,
 				B6D1BB5C2383244A0050696E /* BitcoinEuro */,
+				28A96F7C2385F6E500729566 /* CurrencySelection */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -309,7 +360,6 @@
 				B6408D6923846C810029A720 /* BitcoinData.swift */,
 				B6408D6C23846CB50029A720 /* BitcoinSubdata.swift */,
 				B6EA429023846202002C33F7 /* BitcoinDayInformation.swift */,
-				B6D1BB65238328EF0050696E /* BitcoinTBO-Bridging-Header.h */,
 				B6408D9F2384A8830029A720 /* Bitcoin.swift */,
 			);
 			path = Models;
@@ -429,6 +479,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				282012FA2387061F004B9276 /* UnitTestHistoryBitcoin.json in Resources */,
+				2820130323870BA2004B9276 /* UnitTestCurrentBitCoinInformation.json in Resources */,
+				2820130223870BA2004B9276 /* UnitTestBadHistoryBitcoin.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,10 +497,12 @@
 				28A96F772385B41300729566 /* CurrencySelectionViewController.swift in Sources */,
 				B6EA428B238450AB002C33F7 /* APIManager.swift in Sources */,
 				B6408D82238482CF0029A720 /* RoundedView.swift in Sources */,
-				B6408D7023846D4F0029A720 /* BitcoinInformationManager.swift in Sources */,
 				B6D1BB63238326AF0050696E /* BitcoinEuroDataSource.swift in Sources */,
+				282012F723870312004B9276 /* Currency.swift in Sources */,
 				B6EA429123846202002C33F7 /* BitcoinDayInformation.swift in Sources */,
 				28A96F722385B36100729566 /* CurrencySelectionTableViewCell.swift in Sources */,
+				282012F32387024F004B9276 /* Constants+API.swift in Sources */,
+				282012EF2386FF15004B9276 /* BitcoinInformationManager.swift in Sources */,
 				B6408D6D23846CB50029A720 /* BitcoinSubdata.swift in Sources */,
 				B6408D7A2384772A0029A720 /* BitcoinInformationCell.swift in Sources */,
 				B6D1BB5E2383246E0050696E /* BitcoinEurosViewController.swift in Sources */,
@@ -456,7 +511,7 @@
 				B6D1BB6D238329B40050696E /* BitcoinEuroTableView.m in Sources */,
 				B6EA428E238452B1002C33F7 /* Constants.swift in Sources */,
 				28A96F7B2385B4BD00729566 /* CurrencySelectionDataSource.swift in Sources */,
-				B6408D852384855A0029A720 /* Double+EuroFormatter.swift in Sources */,
+				B6408D852384855A0029A720 /* Double+CurrencyFormatter.swift in Sources */,
 				B6408D6A23846C810029A720 /* BitcoinData.swift in Sources */,
 				B6408D74238475E10029A720 /* UIViewController+UIAlertController.swift in Sources */,
 				B6408DA02384A8830029A720 /* Bitcoin.swift in Sources */,
@@ -469,14 +524,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				282012E02386FC65004B9276 /* AppDelegate.swift in Sources */,
 				B6EA429223846202002C33F7 /* BitcoinDayInformation.swift in Sources */,
 				B6EA428C238450AB002C33F7 /* APIManager.swift in Sources */,
-				B6408D862384855A0029A720 /* Double+EuroFormatter.swift in Sources */,
-				B6408D7B2384772A0029A720 /* BitcoinInformationCell.swift in Sources */,
+				282012F02386FF28004B9276 /* BitcoinInformationManager.swift in Sources */,
+				282012E42386FC78004B9276 /* CurrencySelectionTableViewCell.swift in Sources */,
+				282012FF238708C9004B9276 /* APIManagerMockTest.swift in Sources */,
+				B6408D862384855A0029A720 /* Double+CurrencyFormatter.swift in Sources */,
+				282012E32386FC72004B9276 /* URL+AddPath.swift in Sources */,
+				282012F42387024F004B9276 /* Constants+API.swift in Sources */,
+				282012EA2386FC8F004B9276 /* BitcoinEuroTableView.m in Sources */,
+				282012F5238702D3004B9276 /* CurrencySelectionManager.swift in Sources */,
+				282012F823870312004B9276 /* Currency.swift in Sources */,
 				B6408D6B23846C810029A720 /* BitcoinData.swift in Sources */,
 				B6408D6E23846CB50029A720 /* BitcoinSubdata.swift in Sources */,
-				28A96F6D2385AF4000729566 /* CurrencyFormatter.swift in Sources */,
-				B6D1BB5123831EA50050696E /* BitcoinTBOTests.swift in Sources */,
+				28A96F6D2385AF4000729566 /* CurrencyFormatterTest.swift in Sources */,
+				282012DB2386F1A8004B9276 /* APIManagerTest.swift in Sources */,
+				282012EB2386FC9B004B9276 /* Bitcoin.swift in Sources */,
 				B6408D80238478BC0029A720 /* Array+SafeIndex.swift in Sources */,
 				B6408D83238482CF0029A720 /* RoundedView.swift in Sources */,
 			);
@@ -637,7 +701,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ramram.BitcoinTBO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "BitcoinTBO/Scenes/BitcoinEuro/Models/BitcoinTBO-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "BitcoinTBO/Helpers/BitcoinTBO-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -659,7 +723,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ramram.BitcoinTBO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "BitcoinTBO/Scenes/BitcoinEuro/Models/BitcoinTBO-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "BitcoinTBO/Helpers/BitcoinTBO-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

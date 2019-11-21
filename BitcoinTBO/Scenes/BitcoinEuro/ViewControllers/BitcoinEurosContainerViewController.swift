@@ -62,6 +62,8 @@ extension BitcoinEurosContainerViewController {
 	}
 }
 
+// MARK: - Implementation CurrencySelectionDelegate Protocol
+
 extension BitcoinEurosContainerViewController: CurrencySelectionDelegate {
 
 	func didSelectCurrency() {

@@ -14,6 +14,7 @@ class BitcoinEuroDataSource         : NSObject {
 	
     var bitcoinDayInformations      = [BitcoinDayInformation]()
 	var dateFormatter				= DateFormatter()
+	var bitcoinInformationManager	= BitcoinInformationManager(apiManager: APIManager.shared)
 }
 
 // MARK: - Fetchers
@@ -23,7 +24,7 @@ extension BitcoinEuroDataSource {
 	/// Method to fetch Bitcoin information
 	/// - Parameter completion: completion containing error when needed
     func fetchBitcoinInformations(completion: ((_ error: Error?) -> Void)?) {
-        BitcoinInformationManager.fetchBitcoinInformation { (bitcoinDayInformations: [BitcoinDayInformation], error: Error?) in
+		self.bitcoinInformationManager.fetchBitcoinInformation { (bitcoinDayInformations: [BitcoinDayInformation], error: Error?) in
             if let error = error {
                 completion?(error)
             }

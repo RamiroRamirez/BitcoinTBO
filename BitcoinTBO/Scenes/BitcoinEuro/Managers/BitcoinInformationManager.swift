@@ -8,7 +8,7 @@
 
 import Foundation
 
-private enum FetchCase {
+enum FetchCase {
 	case historyBitcoinInfos
 	case currentBitcoinInfos
 
@@ -34,16 +34,22 @@ private enum FetchCase {
 
 struct BitcoinInformationManager {
 
+	private var apiManager: APIManagerProtocol?
+
+	init(apiManager: APIManagerProtocol?) {
+		self.apiManager = apiManager
+	}
+
 	/// Method to fetch bitcoin information
 	/// - Parameter completion: completion containing array of BitcoinDayInformation objects and error when needed
-	static func fetchBitcoinInformation(completion: ((_ bitcoinDayInformations: [BitcoinDayInformation], _ error: Error?) -> Void)?) {
+	func fetchBitcoinInformation(completion: ((_ bitcoinDayInformations: [BitcoinDayInformation], _ error: Error?) -> Void)?) {
 		guard let url = self.url(for: .historyBitcoinInfos) else {
 			completion?([], APIManager.Invalid.format.localizedError)
 			return
 		}
 
-		let requestElements = APIManager.RequestElements(url: url, parameters: FetchCase.historyBitcoinInfos.parameters, headers: nil)
-		APIManager.get(requestElements: requestElements, success: { (responseData: Any?) in
+		let requestElements = RequestElements(url: url, parameters: FetchCase.historyBitcoinInfos.parameters, headers: nil)
+		self.apiManager?.get(requestElements: requestElements, success: { (responseData: Any?) in
 			guard let data = responseData as? Data else {
 				completion?([], APIManager.Invalid.format.localizedError)
 				return
@@ -51,25 +57,24 @@ struct BitcoinInformationManager {
 
 			let bitcoinInformation = self.bitcoinInformation(from: data)
 			completion?(bitcoinInformation.bitcoinDayInformations, bitcoinInformation.error)
-
 		}, failure: { (error: Error) in
 			completion?([], error)
 		})
 	}
 	
-	static func fetchCurrentBitcoinInformation(completion: ((_ bitcoin: Bitcoin?, _ error: Error?) -> Void)?) {
+	func fetchCurrentBitcoinInformation(completion: ((_ bitcoin: Bitcoin?, _ error: Error?) -> Void)?) {
 		guard let url = self.url(for: .currentBitcoinInfos) else {
 			completion?(nil, APIManager.Invalid.format.localizedError)
 			return
 		}
 
-		let requestElements = APIManager.RequestElements(url: url, parameters: FetchCase.currentBitcoinInfos.parameters, headers: nil)
-		APIManager.get(requestElements: requestElements, success: { (responseData: Any?) in
+		let requestElements = RequestElements(url: url, parameters: FetchCase.currentBitcoinInfos.parameters, headers: nil)
+		self.apiManager?.get(requestElements: requestElements, success: { (responseData: Any?) in
 			guard let data = responseData as? Data else {
 				completion?(nil, APIManager.Invalid.format.localizedError)
 				return
 			}
-			
+
 			let bitcoin = self.currentBitcoinInformation(from: data)
 			completion?(bitcoin.bitcoin, nil)
 		}, failure: { (error: Error) in
@@ -80,7 +85,7 @@ struct BitcoinInformationManager {
 
 extension BitcoinInformationManager {
 
-	private static func url(for fetchCase: FetchCase) -> URL? {
+	private func url(for fetchCase: FetchCase) -> URL? {
 		guard let url = fetchCase.url else {
 			return nil
 		}
@@ -90,7 +95,7 @@ extension BitcoinInformationManager {
 	
 	/// Method to decode json into bitcoin models
 	/// - Parameter data: data received from request
-	private static func bitcoinInformation(from data: Data) -> (bitcoinDayInformations: [BitcoinDayInformation], error: Error?) {
+	private func bitcoinInformation(from data: Data) -> (bitcoinDayInformations: [BitcoinDayInformation], error: Error?) {
 		do {
 			let bitcoinData = try JSONDecoder().decode(BitcoinData.self, from: data)
 			return (bitcoinDayInformations: bitcoinData.bitcoinSubdata.bitcoinDayInformations, error: nil)
@@ -99,7 +104,7 @@ extension BitcoinInformationManager {
 		}
 	}
 	
-	private static func currentBitcoinInformation(from data: Data) -> (bitcoin: Bitcoin?, error: Error?) {
+	private func currentBitcoinInformation(from data: Data) -> (bitcoin: Bitcoin?, error: Error?) {
 		do {
 			let bitcoin = try JSONDecoder().decode(Bitcoin.self, from: data)
 			return (bitcoin: bitcoin, error: nil)
