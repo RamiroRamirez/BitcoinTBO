@@ -8,22 +8,40 @@
 
 import Foundation
 
-struct BitcoinInformationManager {
+private enum FetchCase {
+	case historyBitcoinInfos
+	case currentBitcoinInfos
 
-	// TODO: Refactor this:
+	var url: URL? {
+		switch self {
+		case .historyBitcoinInfos	: return Constants.API.baseUrlV2?.add(path: Constants.API.Endpoint.historicalDaily.rawValue)
+		case .currentBitcoinInfos	: return Constants.API.baseUrl?.add(path: Constants.API.Endpoint.price.rawValue)
+		}
+	}
+
+	var parameters: [String: Any]? {
+		switch self {
+		case .historyBitcoinInfos:
+			return [Constants.API.Keys.fsym.rawValue: Constants.API.Values.bitcoin.rawValue,
+					Constants.API.Keys.tsym.rawValue: CurrencySelectionManager.shared.currentCurrency.isoCode]
+		case .currentBitcoinInfos:
+			return [Constants.API.Keys.fsym.rawValue: Constants.API.Values.bitcoin.rawValue,
+					Constants.API.Keys.tsyms.rawValue: CurrencySelectionManager.shared.currentCurrency.isoCode]
+		}
+	}
+}
+
+struct BitcoinInformationManager {
 
 	/// Method to fetch bitcoin information
 	/// - Parameter completion: completion containing array of BitcoinDayInformation objects and error when needed
 	static func fetchBitcoinInformation(completion: ((_ bitcoinDayInformations: [BitcoinDayInformation], _ error: Error?) -> Void)?) {
-		guard let url = Constants.API.baseUrlV2?.add(path: Constants.API.Endpoint.historicalDaily.rawValue) else {
+		guard let url = self.url(for: .historyBitcoinInfos) else {
 			completion?([], APIManager.Invalid.format.localizedError)
 			return
 		}
 
-		let parameters = [Constants.API.Keys.fsym.rawValue: Constants.API.Values.bitcoin.rawValue,
-						  Constants.API.Keys.tsym.rawValue: CurrencySelectionManager.shared.currentCurrency.isoCode]
-		let requestElements = APIManager.RequestElements(url: url, parameters: parameters, headers: nil)
-
+		let requestElements = APIManager.RequestElements(url: url, parameters: FetchCase.historyBitcoinInfos.parameters, headers: nil)
 		APIManager.get(requestElements: requestElements, success: { (responseData: Any?) in
 			guard let data = responseData as? Data else {
 				completion?([], APIManager.Invalid.format.localizedError)
@@ -39,15 +57,12 @@ struct BitcoinInformationManager {
 	}
 	
 	static func fetchCurrentBitcoinInformation(completion: ((_ bitcoin: Bitcoin?, _ error: Error?) -> Void)?) {
-		guard let url = Constants.API.baseUrl?.add(path: Constants.API.Endpoint.price.rawValue) else {
+		guard let url = self.url(for: .currentBitcoinInfos) else {
 			completion?(nil, APIManager.Invalid.format.localizedError)
 			return
 		}
-		
-		let parameters = [Constants.API.Keys.fsym.rawValue: Constants.API.Values.bitcoin.rawValue,
-						  Constants.API.Keys.tsyms.rawValue: CurrencySelectionManager.shared.currentCurrency.isoCode]
-		let requestElements = APIManager.RequestElements(url: url, parameters: parameters, headers: nil)
-		
+
+		let requestElements = APIManager.RequestElements(url: url, parameters: FetchCase.currentBitcoinInfos.parameters, headers: nil)
 		APIManager.get(requestElements: requestElements, success: { (responseData: Any?) in
 			guard let data = responseData as? Data else {
 				completion?(nil, APIManager.Invalid.format.localizedError)
@@ -63,6 +78,14 @@ struct BitcoinInformationManager {
 }
 
 extension BitcoinInformationManager {
+
+	private static func url(for fetchCase: FetchCase) -> URL? {
+		guard let url = fetchCase.url else {
+			return nil
+		}
+
+		return url
+	}
 	
 	/// Method to decode json into bitcoin models
 	/// - Parameter data: data received from request
