@@ -29,6 +29,13 @@ extension BitcoinEuroDataSource {
             }
             
             self.bitcoinDayInformations = bitcoinDayInformations
+
+			self.bitcoinDayInformations.sort { (first: BitcoinDayInformation, second: BitcoinDayInformation) -> Bool in
+				let firstDate = Date(timeIntervalSince1970: first.time)
+				let secondDate = Date(timeIntervalSince1970: second.time)
+				return (firstDate > secondDate)
+			}
+
             completion?(nil)
         }
     }

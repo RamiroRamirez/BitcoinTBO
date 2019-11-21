@@ -18,7 +18,9 @@ class BitcoinEurosViewController						: UIViewController {
 	
 	var bitcoinEuroDataSource							= BitcoinEuroDataSource()
 	var changeCurrentBitcoinInformationViewVisibility	: ((_ hide: Bool) -> Void)?
-	
+
+	// MARK: - View Life Cycle
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
@@ -26,12 +28,13 @@ class BitcoinEurosViewController						: UIViewController {
 		self.fetchData()
 	}
 
+	// MARK: - Reload/fetch data
+
 	func reloadData() {
 		self.fetchData()
 	}
 
 	private func fetchData() {
-
 		self.bitcoinEuroDataSource.fetchBitcoinInformations { [weak self] (error: Error?) in
 			DispatchQueue.main.async {
 				if let error = error {
