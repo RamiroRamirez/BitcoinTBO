@@ -10,9 +10,13 @@ import Foundation
 
 struct Bitcoin			: Codable {
 	
-	var valueInEuros	: Double
+	var valueInEuros	: Double?
+	var valueInDollars	: Double?
+	var valueInPounds	: Double?
 	
 	enum CodingKeys: String, CodingKey {
-        case valueInEuros = "EUR"
+        case valueInEuros	= "EUR"
+		case valueInDollars	= "USD"
+		case valueInPounds	= "GBP"
     }
 }

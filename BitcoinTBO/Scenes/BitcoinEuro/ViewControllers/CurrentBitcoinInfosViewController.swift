@@ -64,9 +64,16 @@ extension CurrentBitcoinInfosViewController {
 			self.showSimpleAlertController(message: error.localizedDescription)
 			return
 		}
+
+		var bitcoinValue: Double?
+		switch CurrencySelectionManager.shared.currentCurrency {
+		case .dollar	: bitcoinValue = bitcoin?.valueInDollars
+		case .euro		: bitcoinValue = bitcoin?.valueInEuros
+		case .pound		: bitcoinValue = bitcoin?.valueInPounds
+		}
 		
 		guard
-			let bitcoinValueInEuros = bitcoin?.valueInEuros,
+			let bitcoinValueInEuros = bitcoinValue,
 			let bitcoinValueInEurosString = bitcoinValueInEuros.currencyFormat(for: CurrencySelectionManager.shared.currentCurrency.isoCode) else {
 				self.showSimpleAlertController(message: APIManager.Invalid.format.localizedError.localizedDescription)
 				return
