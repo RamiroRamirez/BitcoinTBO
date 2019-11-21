@@ -59,7 +59,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NTn-CY-b9w"/>
                     </view>
-                    <navigationItem key="navigationItem" id="XJM-CF-IEc"/>
+                    <navigationItem key="navigationItem" id="XJM-CF-IEc">
+                        <barButtonItem key="rightBarButtonItem" title="Currency" id="UQn-YK-5ST">
+                            <connections>
+                                <segue destination="gFg-W8-Dpl" kind="show" identifier="toCurrencySelectionViewController" id="IL3-2c-vME"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="currentBitcoinViewConstraint" destination="uDn-tH-B2p" id="m1b-73-3bz"/>
                     </connections>
@@ -128,6 +134,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pg3-XN-MCN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-286.95652173913044" y="-347.54464285714283"/>
+        </scene>
+        <!--CurrencySelection-->
+        <scene sceneID="yQF-nh-64r">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CurrencySelection" id="gFg-W8-Dpl" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="xjF-jN-E9j"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q5J-7j-DjI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="796" y="-437"/>
         </scene>
     </scenes>
 </document>

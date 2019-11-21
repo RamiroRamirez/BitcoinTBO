@@ -52,6 +52,7 @@ extension Constants {
 
 		case toCurrentBitcoinInfosViewController	= "toCurrentBitcoinInfosViewController"
 		case toBitcoinEurosViewController			= "toBitcoinEurosViewController"
+		case toCurrencySelectionViewController		= "toCurrencySelectionViewController"
 	}
 }
 

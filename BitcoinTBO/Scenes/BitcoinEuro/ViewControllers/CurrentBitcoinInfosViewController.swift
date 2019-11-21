@@ -26,6 +26,12 @@ class CurrentBitcoinInfosViewController: UIViewController {
 		self.fetchCurrentBitcoinInformation()
 		self.setTimerForRequest()
 	}
+
+	func reloadData() {
+		self.fetchCurrentBitcoinInformationTimer?.invalidate()
+		self.fetchCurrentBitcoinInformation()
+		self.setTimerForRequest()
+	}
 	
 	deinit {
 		self.fetchCurrentBitcoinInformationTimer?.invalidate()
@@ -61,7 +67,7 @@ extension CurrentBitcoinInfosViewController {
 		
 		guard
 			let bitcoinValueInEuros = bitcoin?.valueInEuros,
-			let bitcoinValueInEurosString = bitcoinValueInEuros.currencyFormat(for: "EUR") else {
+			let bitcoinValueInEurosString = bitcoinValueInEuros.currencyFormat(for: CurrencySelectionManager.shared.currentCurrency.isoCode) else {
 				self.showSimpleAlertController(message: APIManager.Invalid.format.localizedError.localizedDescription)
 				return
 		}

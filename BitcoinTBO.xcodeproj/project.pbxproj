@@ -120,6 +120,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		28A96F7C2385F6E500729566 /* CurrencySelection */ = {
+			isa = PBXGroup;
+			children = (
+				28A96F7F2385F73800729566 /* Views */,
+				28A96F7E2385F71700729566 /* Managers */,
+				28A96F7D2385F70100729566 /* ViewControllers */,
+			);
+			path = CurrencySelection;
+			sourceTree = "<group>";
+		};
+		28A96F7D2385F70100729566 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				28A96F762385B41300729566 /* CurrencySelectionViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		28A96F7E2385F71700729566 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				28A96F782385B47600729566 /* CurrencySelectionManager.swift */,
+				28A96F7A2385B4BD00729566 /* CurrencySelectionDataSource.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		28A96F7F2385F73800729566 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				28A96F802385F74800729566 /* Cells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		28A96F802385F74800729566 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				28A96F702385B36100729566 /* CurrencySelectionTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		B6408D72238475C10029A720 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -144,7 +187,6 @@
 			isa = PBXGroup;
 			children = (
 				B6408D782384772A0029A720 /* BitcoinInformationCell.swift */,
-				28A96F702385B36100729566 /* CurrencySelectionTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -224,6 +266,7 @@
 		B6D1BB5B238324260050696E /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				28A96F7C2385F6E500729566 /* CurrencySelection */,
 				B6D1BB5C2383244A0050696E /* BitcoinEuro */,
 			);
 			path = Scenes;
@@ -243,10 +286,9 @@
 		B6D1BB5F238324EC0050696E /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				B6D1BB5D2383246E0050696E /* BitcoinEurosViewController.swift */,
 				B6408D9B2384A7080029A720 /* BitcoinEurosContainerViewController.swift */,
+				B6D1BB5D2383246E0050696E /* BitcoinEurosViewController.swift */,
 				B6408D9D2384A7EA0029A720 /* CurrentBitcoinInfosViewController.swift */,
-				28A96F762385B41300729566 /* CurrencySelectionViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -278,8 +320,6 @@
 			children = (
 				B6408D6F23846D4F0029A720 /* BitcoinInformationManager.swift */,
 				B6D1BB62238326AF0050696E /* BitcoinEuroDataSource.swift */,
-				28A96F782385B47600729566 /* CurrencySelectionManager.swift */,
-				28A96F7A2385B4BD00729566 /* CurrencySelectionDataSource.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";

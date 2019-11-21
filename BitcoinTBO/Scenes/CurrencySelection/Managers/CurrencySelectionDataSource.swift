@@ -31,23 +31,25 @@ enum Currency: CaseIterable {
 	}
 }
 
-class CurrencySelectionDataSource: NSObject {
+class CurrencySelectionDataSource	: NSObject {
+
+	var currencies					= Currency.allCases
 }
 
 extension CurrencySelectionDataSource: UITableViewDataSource {
 
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return Currency.allCases.count
+		return self.currencies.count
 	}
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		guard
-			let currency = Currency.allCases[safe: indexPath.row],
+			let currency = self.currencies[safe: indexPath.row],
 			let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Cells.reuseIdentifier.currencySelectionTableViewCell.rawValue) as? CurrencySelectionTableViewCell else {
 				return UITableViewCell()
 		}
 
-		cell.setupCell(title: currency.title)
+		cell.setupCell(title: currency.title, isSelected: CurrencySelectionManager.shared.currentCurrency == currency)
 		return cell
 	}
 }

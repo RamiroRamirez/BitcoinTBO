@@ -54,6 +54,28 @@ extension BitcoinEurosContainerViewController {
 				bitcoinEurosViewController.changeCurrentBitcoinInformationViewVisibility = { [weak self] (hide: Bool) in
 					self?.changeCurrentBitcoinInformationViewVisibility(hide: hide)
 				}
+		} else if
+			segue.identifier == Constants.Segues.toCurrencySelectionViewController.rawValue,
+			let currencySelectionViewController = segue.destination as? CurrencySelectionViewController {
+			currencySelectionViewController.delegate = self
 		}
+	}
+}
+
+extension BitcoinEurosContainerViewController: CurrencySelectionDelegate {
+
+	func didSelectCurrency() {
+
+		let bitcoinEurosViewController = self.children.first { (viewController: UIViewController) -> Bool in
+			return (viewController is BitcoinEurosViewController)
+		}
+
+		(bitcoinEurosViewController as? BitcoinEurosViewController)?.reloadData()
+
+		let currentBitcoinInfosViewController = self.children.first { (viewController: UIViewController) -> Bool in
+			return (viewController is CurrentBitcoinInfosViewController)
+		}
+
+		(currentBitcoinInfosViewController as? CurrentBitcoinInfosViewController)?.reloadData()
 	}
 }

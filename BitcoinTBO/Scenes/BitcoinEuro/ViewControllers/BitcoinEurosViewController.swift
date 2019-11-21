@@ -23,6 +23,15 @@ class BitcoinEurosViewController						: UIViewController {
 		super.viewDidLoad()
 		
 		self.setupTableView()
+		self.fetchData()
+	}
+
+	func reloadData() {
+		self.fetchData()
+	}
+
+	private func fetchData() {
+
 		self.bitcoinEuroDataSource.fetchBitcoinInformations { [weak self] (error: Error?) in
 			if let error = error {
 				self?.showSimpleAlertController(message: error.localizedDescription)

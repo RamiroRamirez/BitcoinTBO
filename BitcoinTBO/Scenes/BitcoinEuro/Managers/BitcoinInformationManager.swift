@@ -9,7 +9,9 @@
 import Foundation
 
 struct BitcoinInformationManager {
-	
+
+	// TODO: Refactor this:
+
 	/// Method to fetch bitcoin information
 	/// - Parameter completion: completion containing array of BitcoinDayInformation objects and error when needed
 	static func fetchBitcoinInformation(completion: ((_ bitcoinDayInformations: [BitcoinDayInformation], _ error: Error?) -> Void)?) {
@@ -19,7 +21,7 @@ struct BitcoinInformationManager {
 		}
 
 		let parameters = [Constants.API.Keys.fsym.rawValue: Constants.API.Values.bitcoin.rawValue,
-						  Constants.API.Keys.tsym.rawValue: Constants.API.Values.euro.rawValue]
+						  Constants.API.Keys.tsym.rawValue: CurrencySelectionManager.shared.currentCurrency.isoCode]
 		let requestElements = APIManager.RequestElements(url: url, parameters: parameters, headers: nil)
 
 		APIManager.get(requestElements: requestElements, success: { (responseData: Any?) in
@@ -43,7 +45,7 @@ struct BitcoinInformationManager {
 		}
 		
 		let parameters = [Constants.API.Keys.fsym.rawValue: Constants.API.Values.bitcoin.rawValue,
-						  Constants.API.Keys.tsyms.rawValue: Constants.API.Values.euro.rawValue]
+						  Constants.API.Keys.tsyms.rawValue: CurrencySelectionManager.shared.currentCurrency.isoCode]
 		let requestElements = APIManager.RequestElements(url: url, parameters: parameters, headers: nil)
 		
 		APIManager.get(requestElements: requestElements, success: { (responseData: Any?) in

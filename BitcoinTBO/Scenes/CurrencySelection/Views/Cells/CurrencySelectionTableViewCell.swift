@@ -10,8 +10,8 @@ import UIKit
 
 class CurrencySelectionTableViewCell: UITableViewCell {
 
-	func setupCell(title: String) {
+	func setupCell(title: String, isSelected: Bool) {
 		self.textLabel?.text = title
+		self.accessoryType = ((isSelected == true) ? .checkmark : .none)
 	}
-
 }

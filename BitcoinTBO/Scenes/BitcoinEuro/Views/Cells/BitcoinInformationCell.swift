@@ -30,9 +30,10 @@ class BitcoinInformationCell					: UITableViewCell {
 extension BitcoinInformationCell {
 	
 	func setupCell(bitcoinDayInformation: BitcoinDayInformation, dateFormatter: DateFormatter) {
-		self.lowValueLabel.text = bitcoinDayInformation.low.currencyFormat(for: "EUR")
-		self.highValueLabel.text = bitcoinDayInformation.high.currencyFormat(for: "EUR")
-		self.closeValueLabel.text = bitcoinDayInformation.close.currencyFormat(for: "EUR")
+		let currencyISOCode = CurrencySelectionManager.shared.currentCurrency.isoCode
+		self.lowValueLabel.text = bitcoinDayInformation.low.currencyFormat(for: currencyISOCode)
+		self.highValueLabel.text = bitcoinDayInformation.high.currencyFormat(for: currencyISOCode)
+		self.closeValueLabel.text = bitcoinDayInformation.close.currencyFormat(for: currencyISOCode)
 		
 		let date = Date(timeIntervalSince1970: bitcoinDayInformation.time)
 		dateFormatter.dateStyle = .medium
