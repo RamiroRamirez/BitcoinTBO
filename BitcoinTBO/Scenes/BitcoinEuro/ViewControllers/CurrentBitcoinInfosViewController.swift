@@ -17,6 +17,7 @@ class CurrentBitcoinInfosViewController: UIViewController {
 	// MARK: - Properties
 	
 	var fetchCurrentBitcoinInformationTimer				: Timer?
+	var bitcoinInformationManager	= BitcoinInformationManager(apiManager: APIManager.shared)
 
 	// MARK: - View Life Cycle
 
@@ -49,7 +50,7 @@ extension CurrentBitcoinInfosViewController {
 	
 	@objc
 	private func fetchCurrentBitcoinInformation() {
-		BitcoinInformationManager.fetchCurrentBitcoinInformation { [weak self] (bitcoin: Bitcoin?, error: Error?) in
+		self.bitcoinInformationManager.fetchCurrentBitcoinInformation { [weak self] (bitcoin: Bitcoin?, error: Error?) in
 			DispatchQueue.main.async {
 				self?.showCurrentBitcoinInformation(error: error, bitcoin: bitcoin)
 			}

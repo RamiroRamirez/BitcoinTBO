@@ -8,34 +8,42 @@
 
 import Foundation
 
-// Manager handling all API Requests
-struct APIManager {
-    
-    /// Enum indicating different http method cases
-    enum HTTPMethod: String {
-        case get    = "GET"
-        case post   = "POST"
-    }
-    
-    /// Struct containing elements that are necessary to make a request
-    struct RequestElements {
-        var url             : URL
-        var parameters      : [String: Any]?
-        var headers         : [String: String]?
-        
-        init(url: URL, parameters: [String: Any]? = nil, headers: [String: String]?) {
-            self.url = url
-            self.parameters = parameters
-            self.headers = headers
-        }
-    }
+enum HTTPMethod: String {
+	case get    = "GET"
+	case post   = "POST"
 }
 
-// MARK: - Get request
+/// Struct containing elements that are necessary to make a request
+struct RequestElements {
+	var url             : URL
+	var parameters      : [String: Any]?
+	var headers         : [String: String]?
 
-extension APIManager {
-    
-    static func get(requestElements: RequestElements, success: ((_ response: Any?) -> Void)?, failure: ((_ error: Error) -> Void)?) {
+	init(url: URL, parameters: [String: Any]? = nil, headers: [String: String]?) {
+		self.url = url
+		self.parameters = parameters
+		self.headers = headers
+	}
+}
+
+protocol APIManagerProtocol {
+
+	func get(requestElements: RequestElements, success: ((_ response: Any?) -> Void)?, failure: ((_ error: Error) -> Void)?)
+}
+
+class APIManager {
+
+	static let shared = APIManager()
+
+	private init() {
+	}
+}
+
+// MARK: - Implementation APIManager Protocol
+
+extension APIManager: APIManagerProtocol {
+
+	func get(requestElements: RequestElements, success: ((_ response: Any?) -> Void)?, failure: ((_ error: Error) -> Void)?) {
         self.prepareAndSendRequest(requestElements: requestElements, httpMethod: .get, success: success, failure: failure)
     }
 }
@@ -44,7 +52,7 @@ extension APIManager {
 
 extension APIManager {
     
-    private static func request(url: URL, httpMethod: HTTPMethod, headers: [String: String]?) -> URLRequest {
+    private func request(url: URL, httpMethod: HTTPMethod, headers: [String: String]?) -> URLRequest {
         
         var request = URLRequest(url: url)
         headers?.forEach({ (key: String, value: String) in
@@ -55,7 +63,7 @@ extension APIManager {
         return request
     }
     
-    private static func prepareAndSendRequest(requestElements: RequestElements,
+    private func prepareAndSendRequest(requestElements: RequestElements,
                                               httpMethod: HTTPMethod,
                                               success: ((_ response: Any?) -> Void)?,
                                               failure: ((_ error: Error) -> Void)?) {
@@ -80,7 +88,7 @@ extension APIManager {
         task.resume()
     }
     
-    private static func urlComponents(url: URL, parameters: [String: Any]?) -> URLComponents? {
+    private func urlComponents(url: URL, parameters: [String: Any]?) -> URLComponents? {
         
         var urlComponents = URLComponents(string: url.absoluteString)
         urlComponents?.queryItems = self.queryItems(parameters: parameters)
@@ -88,7 +96,7 @@ extension APIManager {
         return urlComponents
     }
     
-    private static func queryItems(parameters: [String: Any]?) -> [URLQueryItem] {
+    private func queryItems(parameters: [String: Any]?) -> [URLQueryItem] {
         
         var queryItems = [URLQueryItem]()
         parameters?.forEach({ (key: String, value: Any) in
