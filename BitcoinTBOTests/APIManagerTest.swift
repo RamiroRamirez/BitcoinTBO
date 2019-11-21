@@ -28,7 +28,7 @@ class APIManagerTest: XCTestCase {
 		APIManagerMockTest.shared.filename = "UnitTestHistoryBitcoin"
 		let bitcoinInformationManager = BitcoinInformationManager(apiManager: APIManagerMockTest.shared)
 		bitcoinInformationManager.fetchBitcoinInformation { (bitcoinDayInformation: [BitcoinDayInformation], error: Error?) in
-			XCTAssertTrue((bitcoinDayInformation.count == 17), "In fake answer, there was information for 15 days, something went wrong during parsing")
+			XCTAssertTrue((bitcoinDayInformation.count == 17), "In fake answer, there was information for 17 days, something went wrong during parsing")
 			expectation.fulfill()
 		}
 
